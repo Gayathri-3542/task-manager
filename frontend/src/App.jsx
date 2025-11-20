@@ -69,7 +69,9 @@ export default function TaskManager() {
 
   const fetchTasks = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/tasks");
+      const res = await fetch(
+        "https://task-manager-upu6.onrender.com/api/tasks"
+      );
       const data = await res.json();
       setTasks(data);
     } catch (error) {
@@ -95,13 +97,16 @@ export default function TaskManager() {
 
     try {
       if (editMode) {
-        await fetch(`http://localhost:5000/api/tasks/${currentTask._id}`, {
-          method: "PUT",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(currentTask),
-        });
+        await fetch(
+          `https://task-manager-upu6.onrender.com/api/tasks/${currentTask._id}`,
+          {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(currentTask),
+          }
+        );
       } else {
-        await fetch("http://localhost:5000/api/tasks", {
+        await fetch("https://task-manager-upu6.onrender.com/api/tasks", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(currentTask),
@@ -117,7 +122,7 @@ export default function TaskManager() {
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this task?")) {
       try {
-        await fetch(`http://localhost:5000/api/tasks/${id}`, {
+        await fetch(`https://task-manager-upu6.onrender.com/api/tasks/${id}`, {
           method: "DELETE",
         });
         fetchTasks();
