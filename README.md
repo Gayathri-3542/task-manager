@@ -103,5 +103,13 @@ Frontend will run at:http://localhost:5173
 ### Terminal 2 (Frontend)
      cd frontend
      npm run dev
+
+# 🚀 Deployment Links
+
+### **Frontend (Vercel)**  
+🔗 https://task-manager-amber-rho.vercel.app/
+
+### **Backend (Render)**  
+🔗 https://task-manager-upu6.onrender.com
    
 
