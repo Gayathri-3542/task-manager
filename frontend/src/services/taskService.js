@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // Backend base URL
-const API_URL = "http://localhost:5000/api/tasks";
+const API_URL = "https://task-manager-upu6.onrender.com/api/tasks";
 
 export const getTasks = () => axios.get(API_URL);
 
